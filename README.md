@@ -1,9 +1,14 @@
 # game_matrice_python
 Alexendre Pierre / Louis Hus / Wilk--Ravoux Tom 
 ---
-
-### 3. **Insérer des Emojis pour Dynamiser**
-Ajoute des emojis pour rendre ton README plus interactif et agréable :
+# Prérequis :
+- Installer numpy :
+    ```
+        git clone https://github.com/TomWilkRavoux/game_matrice_python.git
+- Installer numpy :
+    ```bash
+        pip install numpy    
+---
 - ✅ Victoire : **"Félicitations, vous avez gagné !"**
 - ❌ Perte de vie : **"Obstacle ! Tu perds une vie."**
 - 🕹️ Commandes :
@@ -12,10 +17,3 @@ Ajoute des emojis pour rendre ton README plus interactif et agréable :
   - `q` : Gauche
   - `d` : Droite
 
-Exemple :
-```markdown
-### 🎮 Commandes :
-- `z` : Haut
-- `s` : Bas
-- `q` : Gauche
-- `d` : Droite
