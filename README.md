@@ -2,7 +2,7 @@
 Alexendre Pierre / Louis Hus / Wilk--Ravoux Tom 
 ---
 # Prérequis :
-- Installer numpy :
+- Installer le projet :
     ```
         git clone https://github.com/TomWilkRavoux/game_matrice_python.git
 - Installer numpy :
