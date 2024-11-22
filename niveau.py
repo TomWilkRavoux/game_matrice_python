@@ -1,5 +1,9 @@
 import random
 import numpy as np
+from colorama import Fore, Back, Style, init
+
+# Initialisation de colorama
+init()
 
 class Niveau:
     def __init__(self, taille=5, densite_obstacle=0.2):
@@ -14,4 +18,11 @@ class Niveau:
 
     def afficher(self):
         for ligne in self.grille:
-            print(" ".join(ligne))
+            ligne_coloree = [
+                Fore.WHITE + case + Style.RESET_ALL if case == "0" else
+                Fore.RED + case + Style.RESET_ALL if case == "1" else
+                Fore.GREEN + case + Style.RESET_ALL if case == "P" else
+                Fore.YELLOW + case + Style.RESET_ALL 
+                for case in ligne
+            ]
+            print(" ".join(ligne_coloree))
