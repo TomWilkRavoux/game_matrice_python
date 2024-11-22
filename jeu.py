@@ -1,19 +1,24 @@
 import time
 import sys
 import random
+from colorama import Fore, init
 from niveau import Niveau
 from joueur import Joueur
+
+init()
 
 class Jeu:
     def __init__(self):
         self.tentatives = 0
 
     def menu(self):
-        print("Hehe à toi de choisir !! good game !")
-        print("1 = Mode classique")
+        print(Fore.MAGENTA + "Hehe à toi de choisir !! good game !")
+        print("---------------------------------------------------")
+        print(Fore.GREEN + "1 = Mode classique")
         print("2 = Mode course contre la montre")
         print("3 = Mode difficile")
-        choix = input("Choisissez un mode (1 ,2, 3) :")
+        print(Fore.MAGENTA + "---------------------------------------------------")
+        choix = input(Fore.YELLOW + "Choisissez un mode (1 ,2, 3) :")
         return choix
 
 
@@ -22,8 +27,10 @@ class Jeu:
             niveau = Niveau()
             joueur = Joueur(niveau)
 
+            print(Fore.GREEN + "Mode Classique")
+
             while True:
-                print("\nNiveau actuel :")
+                print(Fore.YELLOW + "\nNiveau actuel :")
                 niveau.afficher()
                 print(f"Position : {joueur.x}, {joueur.y}; Vie : {joueur.vie}")
 
@@ -42,13 +49,13 @@ class Jeu:
         niveau = Niveau()
         joueur = Joueur(niveau)
 
-        print("\nMode Timer ! Terminez le niveau en moins d'une minute.")
+        print(Fore.GREEN + "\nMode Timer ! Terminez le niveau en moins d'une minute.")
 
         debut = time.time()
         limite_temps = 15
 
         while True:
-            print("\nNiveau actuel :")
+            print(Fore.YELLOW + "\nNiveau actuel :")
             niveau.afficher()
             print(f"Position : {joueur.x}, {joueur.y}; Vie : {joueur.vie}")
 
@@ -57,6 +64,7 @@ class Jeu:
 
             if temps_restant <= 0:
                 print("⏳ Temps écoulé ! Vous avez perdu.")
+                print(f"Votre temps est de {temps_ecoule}")
                 return
             
             sys.stdout.write(f"\rTemps restant : {temps_restant:.2f} secondes")
@@ -79,8 +87,10 @@ class Jeu:
             joueur = Joueur(niveau)
             joueur.vie = 1
 
+            print(Fore.GREEN + "Mode Difficile")
+
             while True:
-                print("\nNiveau actuel :")
+                print(Fore.YELLOW + "\nNiveau actuel :")
                 niveau.afficher()
                 print(f"Position : {joueur.x}, {joueur.y}; Vie : {joueur.vie}")
 
